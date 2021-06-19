@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using WalletLibrary;
 
 namespace Wallet
 {
@@ -12,6 +14,8 @@ namespace Wallet
             var wallet = new WalletLibrary.Wallet();
             double money;
             var date = new DateTime();
+            List<string> history = null;
+            List<double> i = null;
 
             if (CLI.File.Exist())
             {
@@ -50,8 +54,23 @@ namespace Wallet
                         wallet.Income(date, income, money);
                         break;
                     case "3": // 3 - Учесть расходы
+                        date = CLI.CLI.InputDate("Введите дату расхода - ");
+                        foreach (var item in history)
+                        {
+                            Console.ReadLine();
+                        }
+
                         money = CLI.CLI.InputMoney("Введите расход - ");
-                        wallet.Outgo(money);
+                        foreach (var item in i)
+                        {
+                            Console.ReadLine();
+                        }
+
+                        expenditure expenditure = null;
+                        wallet.Outgo(date,expenditure,money); 
+                        break;
+                    case "4":
+                        Console.WriteLine($"{history}-{i}");
                         break;
                     case "0": // 0 - Выйти из программы
                         CLI.CLI.Bye();

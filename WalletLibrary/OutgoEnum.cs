@@ -1,6 +1,4 @@
-﻿using System.Net;
-
-namespace WalletLibrary
+﻿namespace WalletLibrary
 {
     public enum OutgoEnum
     {

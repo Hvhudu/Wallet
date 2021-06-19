@@ -34,21 +34,28 @@ namespace WalletLibrary
             }
         }
 
-        public void Outgo(double sum)
+        public void Outgo(double sum,DateTime date)
+        {   if (sum <= 0)
         {
-            if (sum <= 0)
-            {
-                _money -= 0;
-            }
-            else
-            {
-                _money -= sum;
-            }
+            _money -= 0;
         }
-
-        public double Money()
+        else
         {
-            return _money;
+            _money -= sum;
+            expenditureEnum expenditure = expenditureEnum.Unknown;
+            var _expenditure = new expenditure(date, expenditure, sum);
+            _expenditure.Add(_expenditure);
         }
     }
+
+    public double Money()
+    {
+    return _money;
 }
+
+public void Outgo(DateTime date, expenditure expenditure, double money)
+{
+    throw new NotImplementedException();
+}
+}
+    }

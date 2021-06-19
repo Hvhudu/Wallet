@@ -30,6 +30,7 @@ namespace CLI
             Console.WriteLine("1 - Сколько денег в кошельке");
             Console.WriteLine("2 - Внести доход");
             Console.WriteLine("3 - Учесть расходы");
+            Console.WriteLine("4 - История расходов");
             Console.WriteLine("0 - Выйти из программы");
             Console.ResetColor();
         }
